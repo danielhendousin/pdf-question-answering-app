@@ -1,0 +1,385 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e5eef7;
+  background:
+    radial-gradient(circle at top left, rgba(91, 141, 239, 0.18), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(42, 184, 151, 0.16), transparent 32%),
+    linear-gradient(180deg, #0b1020 0%, #10172b 100%);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { min-height: 100%; }
+body { margin: 0; }
+button, input, textarea { font: inherit; }
+
+.pageShell {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundGlow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  filter: blur(70px);
+  opacity: 0.42;
+  border-radius: 999px;
+  pointer-events: none;
+}
+
+.glowOne {
+  background: #4576f6;
+  top: -120px;
+  left: -120px;
+}
+
+.glowTwo {
+  background: #1ea98b;
+  right: -120px;
+  bottom: -120px;
+}
+
+.appShell {
+  position: relative;
+  z-index: 1;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 40px 18px 56px;
+}
+
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(12, 18, 35, 0.72);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  border-radius: 24px;
+}
+
+.hero {
+  padding: 28px;
+  display: grid;
+  gap: 22px;
+}
+
+.eyebrow,
+.sectionTag,
+.statLabel,
+.infoLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 12px;
+  color: #97a6c8;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  margin-top: 8px;
+}
+
+h2 { font-size: 1.4rem; }
+h3 { font-size: 1.05rem; }
+
+.subtitle,
+.sideText,
+.answerText,
+.sourceCard p,
+.stepsList,
+.statusBanner {
+  color: #c6d2ea;
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.statTile,
+.infoCard,
+.sourceCard {
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statTile {
+  padding: 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.contentGrid {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+  gap: 20px;
+}
+
+.mainColumn,
+.sideColumn {
+  display: grid;
+  gap: 20px;
+  align-self: start;
+}
+
+.panel,
+.sidePanel {
+  padding: 22px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.compactHeader { margin-bottom: 14px; }
+
+.uploadZone {
+  display: grid;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1.5px dashed rgba(151, 166, 200, 0.45);
+  background: rgba(255, 255, 255, 0.025);
+  cursor: pointer;
+}
+
+.uploadZone input[type="file"] {
+  color: #dce6fb;
+}
+
+.uploadTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.uploadSubtext,
+.uploadFile {
+  color: #9fb0cf;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 150px;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(151, 166, 200, 0.28);
+  background: rgba(255, 255, 255, 0.035);
+  color: #edf3ff;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #8090b0;
+}
+
+.sliderRow {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+.actionRow {
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.primaryButton,
+.ghostButton,
+.chip {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.16s ease, opacity 0.16s ease, background 0.16s ease;
+}
+
+.primaryButton,
+.ghostButton {
+  padding: 12px 18px;
+  border-radius: 14px;
+}
+
+.primaryButton {
+  background: linear-gradient(135deg, #4b7dff, #28b394);
+  color: white;
+  font-weight: 600;
+}
+
+.ghostButton {
+  background: rgba(255, 255, 255, 0.06);
+  color: #d9e5fb;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.primaryButton:hover,
+.ghostButton:hover,
+.chip:hover {
+  transform: translateY(-1px);
+}
+
+.primaryButton:disabled,
+.ghostButton:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.infoCard {
+  margin-top: 18px;
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.successCard {
+  background: linear-gradient(180deg, rgba(37, 180, 142, 0.12), rgba(255, 255, 255, 0.04));
+}
+
+.infoMeta {
+  display: grid;
+  gap: 6px;
+  color: #b7c8e8;
+}
+
+.monoText {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+.promptChips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.chip {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #dbe6fb;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statusBanner {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.answerBox {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.answerText {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.sourcesSection {
+  margin-top: 18px;
+}
+
+.sourcesGrid {
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.sourceCard {
+  padding: 16px;
+}
+
+.sourceBadge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(75, 125, 255, 0.16);
+  color: #bfd3ff;
+  font-size: 0.9rem;
+}
+
+.stepsList {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.stepsList li + li {
+  margin-top: 8px;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.techList span {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #dce7fb;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: #e7f1ff;
+}
+
+@media (max-width: 940px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroStats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .appShell {
+    padding: 24px 14px 36px;
+  }
+
+  .hero,
+  .panel,
+  .sidePanel {
+    padding: 18px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .actionRow {
+    flex-direction: column;
+  }
+}
