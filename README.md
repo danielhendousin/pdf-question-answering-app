@@ -1,23 +1,48 @@
-# Document Intelligence Web App for PDF Question Answering
+# 📄 PDF Question Answering Web App
 
-A portfolio-ready project that lets users upload a PDF, index the content with embeddings, and ask grounded questions about the document.
+A full-stack document intelligence application that allows users to upload PDF files, index their content, and ask grounded questions using Retrieval-Augmented Generation (RAG).
 
-## Why this project is strong
-- Combines **AI + web development + information retrieval**
-- Demonstrates an end-to-end **RAG workflow**
-- Fits graduate applications in **AI, software engineering, web/data science, and information systems**
+---
 
-## Features
-- PDF upload
-- Automatic text extraction and chunking
-- Embedding generation with OpenAI
-- Vector search with FAISS
-- Grounded answers using retrieved document chunks
-- Source snippets with page references
+## 🚀 Overview
 
-## Tech Stack
-### Frontend
-- React + Vite
+This project demonstrates how to build a real-world AI system that combines:
+
+- Document processing
+- Vector search (FAISS)
+- Large Language Models (LLMs)
+- Full-stack development (FastAPI + React)
+
+Users can upload a PDF and ask questions, and the system returns answers based on the document content.
+
+---
+
+## ✨ Features
+
+- Upload and index PDF documents
+- Extract and preprocess text from PDFs
+- Chunk document content for retrieval
+- Generate embeddings and store them in FAISS
+- Ask context-aware questions about the document
+- Retrieve relevant chunks and generate grounded answers
+- Modern React frontend with interactive UI
+
+---
+
+## 🧠 How It Works
+
+1. User uploads a PDF
+2. Backend extracts text using PyPDF
+3. Text is split into chunks
+4. Embeddings are generated using OpenAI
+5. FAISS stores the embeddings
+6. User asks a question
+7. System retrieves relevant chunks
+8. LLM generates a grounded answer
+
+---
+
+## 🛠 Tech Stack
 
 ### Backend
 - FastAPI
@@ -26,56 +51,66 @@ A portfolio-ready project that lets users upload a PDF, index the content with e
 - FAISS
 - PyPDF
 
-## Project Structure
-```bash
-pdf_rag_app/
-├── backend/
-│   ├── app/
-│   │   └── main.py
-│   ├── requirements.txt
-│   ├── .env.example
-│   └── README.md
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   └── styles.css
-│   ├── index.html
-│   ├── package.json
-│   └── vite.config.js
-└── README.md
-```
-
-## How to Run
-### Backend
-```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env
-# add your OPENAI_API_KEY in .env
-uvicorn app.main:app --reload
-```
-
 ### Frontend
-```bash
+- React
+- Vite
+- CSS
+
+---
+
+## 📁 Project Structure
+
+
+backend/
+├── app/
+│ └── main.py
+├── requirements.txt
+
+frontend/
+├── src/
+├── public/
+├── package.json
+
+README.md
+
+
+---
+
+## ⚙️ Setup Instructions
+
+### 🔹 Backend
+
+bash
+cd backend
+pip install -r requirements.txt
+
+Create .env file:
+
+OPENAI_API_KEY=your_openai_api_key_here
+
+Run backend:
+
+python -m uvicorn app.main:app --reload
+🔹 Frontend
 cd frontend
 npm install
 npm run dev
-```
+▶️ Usage
+Open the frontend in your browser
+Upload a PDF file
+Wait for indexing
+Ask questions about the document
+Review the generated answers
+🔒 Security Note
+Do NOT upload your .env file to GitHub
+Keep your API keys private
+Use .env.example for sharing configuration
+📌 Future Improvements
+Highlight answer sources in UI
+Multi-document support
+Chat history
+Authentication system
+Deployment (Docker / cloud)
 
-Then open the local frontend URL shown by Vite.
-
-## Suggested CV entry
-**Document Intelligence Web App for PDF Question Answering**
-- Built a full-stack application for document-grounded question answering over uploaded PDFs
-- Implemented PDF parsing, chunking, embeddings, and vector retrieval using FastAPI, LangChain, and FAISS
-- Integrated an LLM-based answer generation pipeline with source-aware responses and page-level evidence
-- Designed a React frontend to support upload, indexing, and interactive question answering
-
-## Future Improvements
-- Better UI and chat layout
-- Persistent database for multiple users
-- OCR support for scanned PDFs
-- Authentication and deployment
+👤 Author
+Danyal Hendousinabad
