@@ -115,10 +115,10 @@ Deployment (Docker / cloud)
 ## 📸 Demo
 
 ### Upload Step
-![Upload](assets/upload.png)
+![Upload](assests/upload.png)
 
 ### Ask Question
-![Ask](assets/ask.png)
+![Ask](assests/ask.png)
 
 👤 Author
 Danyal Hendousinabad
