@@ -112,5 +112,13 @@ Chat history
 Authentication system
 Deployment (Docker / cloud)
 
+## 📸 Demo
+
+### Upload Step
+![Upload](assets/upload.png)
+
+### Ask Question
+![Ask](assets/ask.png)
+
 👤 Author
 Danyal Hendousinabad
